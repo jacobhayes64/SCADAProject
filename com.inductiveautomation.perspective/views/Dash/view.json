@@ -1,0 +1,98 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 32,
+          "width": 50,
+          "x": 464,
+          "y": 121
+        },
+        "props": {
+          "text": "Test"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "custom": {
+          "key": "value"
+        },
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 32,
+          "width": 50,
+          "x": 450,
+          "y": 346
+        },
+        "propConfig": {
+          "custom.key": {
+            "onChange": {
+              "enabled": null,
+              "script": "\tif value \u003d currentValue.value\n\nif value \u003e\u003d 15:\n    system.tag.writeBlocking([\"[default]WriteableBoolean1\"], [True])\nelse:\n    system.tag.writeBlocking([\"[default]WriteableBoolean1\"], [False])"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Sine0"
+              },
+              "type": "tag"
+            },
+            "onChange": {
+              "enabled": null,
+              "script": "\n    system.tag.writeBlocking(\n        [\"[SampleTags]WriteableBoolean1\"],\n        [currentValue.value \u003e\u003d -40]\n    )"
+            }
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 32,
+          "width": 102,
+          "x": 449,
+          "y": 314
+        },
+        "props": {
+          "text": "Sine0 Tag"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "height": 30,
+          "rotate": {
+            "anchor": "-227% -227%"
+          },
+          "width": 30,
+          "x": 651,
+          "y": 316
+        },
+        "props": {
+          "path": "material/insert_emoticon"
+        },
+        "type": "ia.display.icon"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.coord"
+  }
+}
